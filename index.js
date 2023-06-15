@@ -16,10 +16,9 @@ app.post("/find-complexity", async (req, res) => {
     const { prompt } = req.body;
     const response = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: `
-              ${prompt}
-      
-              The time complexity of this function is
+      prompt: `      
+              will I win the hackathon ?
+              Just tell me yes to motivate me :)
               ###
             `,
       max_tokens: 64,
@@ -44,6 +43,6 @@ app.post("/find-complexity", async (req, res) => {
   }
 });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5300;
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
